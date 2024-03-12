@@ -1,0 +1,126 @@
+@import '~@fortawesome/fontawesome-free/css/all.css';
+
+.quizzes-container table {
+  border-collapse: collapse;
+  width: 100%;
+  background-color: white;
+  border: 2px solid black;
+  min-width: 50vw;
+}
+
+.quizzes-container thead th {
+  background-color: #007bff;
+  color: white;
+  border: 2px solid black;
+  padding: 10px;
+}
+
+.quizzes-container tbody td {
+  border: 2px solid black;
+  padding: 10px;
+}
+
+.quizzes-container tfoot .button-container button {
+  margin: 5px;
+}
+
+.quizzes-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-self: center;
+  //height: 100vh;
+}
+
+.quizzes-container > button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  margin: auto;
+  border-radius: 3px;
+  cursor: pointer;
+  width: 20%;
+}
+
+table {
+  width: 100%;
+}
+
+table,
+th,
+td {
+  border: 1px solid #ddd;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: center;
+}
+
+.hover:hover {
+  background-color: grey;
+  cursor: pointer;
+}
+
+.selected {
+  background-color: lightblue;
+}
+
+.hide-file-input {
+  display: none;
+}
+
+
+.cancel {
+  justify-content: right;
+  align-items: right;
+  background-color: red;
+  color: white;
+  border: 4px solid red;
+
+  &:hover {
+    background-color: white;
+    color: red;
+    transition: 0.3s;
+  }
+
+  &:active {
+    background-color: red;
+    color: black;
+    border: 4px solid black;
+  }
+}
+
+.justify-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+button {
+  margin: 10px;
+  border-radius: 20px;
+  padding: 5px 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+th {
+    mat-icon {
+        cursor: pointer;
+        transition: color 0.3s;
+    }
+
+    mat-icon:hover {
+        color: lightgray;
+    }
+}
+
+.clicked {
+    color: #61dc9f;
+}
+
+

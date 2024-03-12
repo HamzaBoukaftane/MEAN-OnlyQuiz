@@ -1,0 +1,16 @@
+.quiz-row {
+    display: flex;
+    flex-direction: row;
+    //align-items: flex-start;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: row;
+    gap: 10px; /* Adjust the gap between buttons as needed */
+    margin-left: auto;
+}
+
+.button-container > button {
+
+}

@@ -1,0 +1,1 @@
+export const HTTP_STATUS_CODE_CREATED = 201;

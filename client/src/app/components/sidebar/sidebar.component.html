@@ -1,0 +1,27 @@
+<div id="sidebar">
+    <div class="sidebar-header">
+        <h3>Zone de Clavardage</h3>
+    </div>
+
+    <div class="sidebar-content">
+        <div class="message-container" *ngFor="let message of messages" #messageContainer>
+            <div [class]="message.sender === myName ? 'me-said' : 'username-said'">
+                {{(message.sender === myName) ? isHost ? 'Organisateur' : myName + ' (moi)' + ' :' : message.sender + ' :' }}</div>
+            <p>{{ message.content }}</p>
+            <p>{{ message.time.split(' ')[1] }}</p>
+        </div>
+    </div>
+
+    <form class="message-input" [formGroup]="messageForm" (ngSubmit)="sendMessage()">
+        <input
+            *ngIf='canChat'
+            type="text"
+            formControlName="message"
+            placeholder="Envoyer un message"
+            (mousedown)="onChatFocus()" (blur)="onChatBlur()"
+            (keyup.enter)="sendMessage()"
+        >
+        <p *ngIf='!canChat'> Vous n'avez plus le droit de parole!</p>
+    </form>
+    <div class="error-message" *ngIf="messageForm.get('message')?.hasError('maxlength')">Votre message dépasse 200 caractères</div>
+</div>

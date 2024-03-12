@@ -1,0 +1,37 @@
+<div *ngIf='!waitingRoomManagementService.isTransition' class="waiting-room">
+    <div class="waiting-room-header">
+        <h1>Salle d'attente</h1>
+        <h2 *ngIf='isHost'>Code : {{waitingRoomManagementService.roomId}}</h2>
+        <div *ngIf='isHost'>
+            <h3> La salle est {{this.setLockActionMessage()}}</h3>
+            <label class="switch-btn" matTooltip="Verrouiller la salle">
+                <input  type="checkbox" (click)='toggleRoomLocked()'/>
+                <span class="slider round"></span>
+            </label>
+        </div>
+    </div>
+
+    <div class="players-list">
+        <h2>Joueurs:</h2>
+        <ul>
+            <li class="player-item" *ngFor="let player of waitingRoomManagementService.players">
+                <span class="player-name">{{ player }}</span>
+                <div class='icon-container'><i class='fa fa-ban'(click)="banPlayer(player)" *ngIf='isHost' title='bannir'></i></div>
+            </li>
+        </ul>
+    </div>
+
+
+    <div class="actions">
+        <button *ngIf='isHost' class="action-btn" (click)='startGame()' [disabled]="this.waitingRoomManagementService.players.length===0||!this.waitingRoomManagementService.isRoomLocked">Commencer</button>
+        <app-leave-boutton></app-leave-boutton>
+    </div>
+</div>
+<div *ngIf='waitingRoomManagementService.isTransition' class='transition'>
+    <div class='timer'>
+        <h2>Quiz commence dans :</h2>
+        <div>{{waitingRoomManagementService.time}}</div>
+    </div>
+    <app-leave-boutton></app-leave-boutton>
+</div>
+

@@ -1,0 +1,49 @@
+.card {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    border-radius: 10px;
+    border-style: solid;
+}
+
+.active:hover {
+    background-color: rgb(177, 172, 172);
+    cursor: pointer;
+}
+
+.card-flex{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+}
+
+.card-number{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: flex-start;
+    padding-left: 4% ;
+    user-select: none;
+
+}
+.card-number > p{
+    font-weight: 700;
+}
+
+
+.selected {
+    background-color: #007bff;
+    color: #FFFFFF
+}
+
+.good-answer {
+    background-color: #00FF00;
+    color: #000000;
+}
+
+.bad-answer {
+    background-color: #FF0000;
+    color: #FFFFFF;
+}

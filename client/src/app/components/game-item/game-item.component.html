@@ -1,0 +1,10 @@
+<div class="quiz-row">
+    <span> {{quiz.title}} </span>
+    <div class="button-container" *ngIf="isAdmin">
+        <button class="export-button" (click)="exportGame()"> <mat-icon class="green-icon" matTooltip="Exporter le questionnaire">get_app</mat-icon> </button>
+        <button class="update-button" (click)="updateGame()"> <mat-icon class="green-icon" matTooltip="Modifier le questionnaire">edit</mat-icon> </button>
+        <button class="delete-button" (click)="deleteGame()"> <mat-icon class="green-icon" matTooltip="Supprimer le questionnaire">delete</mat-icon> </button>
+    </div>
+</div>
+<a #downloadLink class='download' [hidden]='true'></a>
+

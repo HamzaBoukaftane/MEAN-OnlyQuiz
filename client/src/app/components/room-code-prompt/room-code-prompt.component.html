@@ -1,0 +1,37 @@
+<div class="center-content">
+    <div id="prompt_container">
+       <div *ngIf='(!roomValidationService.isRoomIdValid)&&(!roomValidationService.isUsernameValid)'>
+            <h3>Veuillez saisir le code de 4 chiffre fourni par l'organisateur</h3>
+            <label for="roomId"> Saisir le code: </label>
+            <input
+                id="roomId"
+                [(ngModel)]="roomValidationService.roomId"
+                [class]="inputBorderColor"
+                type="text"
+                maxlength='4'>
+            <p [class]="textColor"> {{error}} <p>
+            <div class="justify-content">
+                <button #enterButton class="enter" (click)='validateRoomId()'> Valider </button>
+                <button  class="cancel" routerLink='/home'> Annuler </button>
+            </div>
+       </div>
+        <div *ngIf='(!roomValidationService.isUsernameValid)&&(roomValidationService.isRoomIdValid)'>
+                <h3>Veuillez choisir votre nom d'utilisateur</h3>
+                <label for="name"> Saisir le nom d'utilisateur: </label>
+                <input type="text" id="name" [(ngModel)]="roomValidationService.username" [class]="inputBorderColor" maxlength='20'>
+                <p [class]="textColor"> {{error}} <p>
+            <div class="justify-content">
+                <button #enterButton class="enter" (click)='validateUsername()'> Valider </button>
+                <button  class="cancel" routerLink='/home'> Annuler </button>
+            </div>
+        </div>
+        <div *ngIf='(roomValidationService.isUsernameValid)&&(roomValidationService.isRoomIdValid)'>
+            <h3 *ngIf='!roomValidationService.isLocked'> Parfait {{roomValidationService.username}}! Vous pouvez rejoindre la partie </h3>
+            <h3 *ngIf='roomValidationService.isLocked'> Désolé {{roomValidationService.username}}! La partie a été vérouillée. </h3>
+            <div class="justify-content">
+                <button *ngIf='!roomValidationService.isLocked' #enterButton class="enter" (click)='joinRoom()'> Rejoindre </button>
+                <button  class="cancel" routerLink='/home'> Annuler </button>
+            </div>
+        </div>
+    </div>
+</div>

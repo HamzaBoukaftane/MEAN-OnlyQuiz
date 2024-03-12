@@ -1,0 +1,11 @@
+<div class="center-content">
+    <div id="error_container">
+        <div class="centered-content">
+            <h3>Erreur lors de l'importation!</h3>
+            <div [innerHTML]="errorsWithLineBreaks" class="left-align"></div>
+        </div>
+        <div class="button-container">
+            <button #enterButton (click)="returnToList()" class="enter">J'ai compris</button>
+        </div>
+    </div>
+</div>

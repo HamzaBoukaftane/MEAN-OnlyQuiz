@@ -1,0 +1,20 @@
+.container {
+    height: 100%;
+    display: flex;
+}
+
+.play-area-container {
+    overflow: auto;
+    flex: 1 1 auto;
+}
+
+.play-area {
+    display: grid;
+    outline: none;
+    height: 100vh;
+}
+
+#sidebar {
+    flex-basis: 350px;
+    min-width: 200px;
+}

@@ -1,0 +1,14 @@
+<div class="stats-container">
+    <h2>Question {{index + 1}}</h2>
+    <p>{{question?.text}}</p>
+    <div class="graph-title">
+        <button *ngIf="!isFirst()" class="arrow" (click)="previous()">Précédent</button>
+        <button *ngIf="!isEnd()" class="arrow" (click)="next()">Suivant</button>
+    </div>
+    <app-statistic-histogram
+        [changingResponses]="responseNumber"
+        [valueOfResponses]="responseValue"
+        [isGameOver]='true'>
+    </app-statistic-histogram>
+</div>
+

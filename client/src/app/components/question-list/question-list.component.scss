@@ -1,0 +1,174 @@
+.quiz-question {
+    align-content: space-between;
+    border: 1px solid black;
+    padding: 2vh;
+    margin-top: 20px;
+}
+
+.button-container {
+    display: flex;
+    align-content: space-between;
+    flex-direction: row;
+    margin: 5px;
+    padding: 5px;
+    justify-content: flex-end;
+    position: relative;
+}
+
+.error-message {
+    color: #dc3545;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    display: inline-block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    .popuptext {
+        visibility: hidden;
+        width: 350px;
+        background-color: #555;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 27px;
+        position: absolute;
+        z-index: 1;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .popuptext::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 0;
+        border-style: solid;
+        border-color: #555 transparent transparent transparent;
+    }
+
+
+    &.show .popuptext {
+        visibility: visible;
+        -webkit-animation: fadeIn 1s;
+        animation: fadeIn 1s;
+    }
+
+    @-webkit-keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+}
+
+.hidden-button {
+    display: none;
+}
+
+.button {
+    margin: 5px;
+    padding: 5px;
+}
+
+.addQuestion{
+    margin: 10px;
+    padding: 5px;
+}
+
+.buttonOptionAddDelete {
+    margin-left: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: -5px;
+    padding-bottom: -5px;
+}
+
+.buttonOptionAddDelete:hover{
+    cursor: pointer;
+}
+
+.AddDelete {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.buttonConfirm{
+    margin: 10px;
+}
+
+.buttonConfirm:hover{
+    cursor: pointer;
+}
+
+.buttonOption:hover{
+    cursor: pointer;
+}
+
+.buttonOption:first-of-type {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.buttonOption:last-of-type {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-bottom: 10px;
+}
+
+.green-icon {
+    color: green !important;
+  }
+  
+  .delete-icon {
+    color: red !important;
+  }
+
+  .add-icon {
+    font-size: 24px;
+    color: green !important;
+  }
+
+  .addDeleteChoices {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.buttonChoice-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.buttonOptionChoices {
+    margin-bottom: 5px;
+    margin-left: 5px;
+}
+
+.true-false-button{
+    display: flex;
+    flex-direction: row;
+}
+
+.arrow-down{
+    display: flex;
+    flex-direction: row;
+}

@@ -1,0 +1,16 @@
+<div class="game-container">
+    <div id='answer-field'>
+        <div class='card-container'>
+            <app-game-answer-choice-card *ngFor='let choice of gameService.question?.choices; let index = index'
+                                         [index]='index+1'
+                                         [choice]='choice'
+                                         (selectEvent)='this.selectChoice($event)'
+                                         (enterPressed)='handleMultipleEmission()'>
+            </app-game-answer-choice-card>
+        </div>
+    </div>
+    <div class='btn-container'>
+        <button class='enter' [disabled]='gameService.lockedStatus' (click)='validate()'>Valider</button>
+        <app-leave-boutton></app-leave-boutton>
+    </div>
+</div>

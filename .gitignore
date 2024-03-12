@@ -1,0 +1,16 @@
+#ignoring .vscode folder but we keep some files for debuging
+/.vscode/chrome
+/.vs/
+
+#ignoring .idea folder
+.idea/
+
+package-lock.json
+.DS_Store
+
+# Code Coverage Folder
+coverage/
+
+#Node Modules
+/node_modules
+

@@ -1,0 +1,11 @@
+<div class="quiz-details" *ngIf="selectedQuiz">
+  <h3 class="quiz-title">{{ selectedQuiz.title }}</h3>
+  <p class="quiz-description">Description: {{ selectedQuiz.description }}</p>
+  <p class="quiz-duration">Durée: {{ selectedQuiz.duration }} s</p>
+  <h4 class="quiz-questions-title">Questions:</h4>
+  <ul class="quiz-questions-list">
+    <li class="quiz-question" *ngFor="let question of selectedQuiz.questions">
+      {{ question.text }}
+    </li>
+  </ul>
+</div>

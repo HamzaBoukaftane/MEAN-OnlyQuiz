@@ -1,0 +1,49 @@
+<p *ngIf='games.length === 0' >Il n'y a aucune partie dans l'historique</p>
+<div *ngIf='games.length !== 0 ' class="quizzes-container" >
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    Nom du Jeu
+                    <mat-icon
+                       matTooltip="Trier par nom"
+                       [ngClass]="{'clicked': isNameIconClicked}"
+                       (click)="sort('name')">{{ getSortIcon('name') }}
+
+                    </mat-icon>
+                </th>
+                <th >Date
+                    <mat-icon
+                        matTooltip="Trier par date"
+                        [ngClass]="{'clicked': isDateIconClicked}"
+                        (click)="sort('date')">{{ getSortIcon('date') }}
+                    </mat-icon>
+                </th>
+                <th >Nombre de Joueurs</th>
+                <th >Meilleur score</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let game of games">
+                <td>
+                    <p>{{ game.gameName }}</p>
+                </td>
+                <td>
+                    <p>{{ game.startTime }}</p>
+                </td>
+                <td>
+                    <p>{{ game.playersCount }}</p>
+                </td>
+                <td>
+                    <p>{{ game.bestScore }}</p>
+                </td>
+
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr class='center-content'>
+                <app-leave-boutton [isGame]= "false" [action]="deleteAllGames.bind(this)"></app-leave-boutton>
+            </tr>
+        </tfoot>
+    </table>
+</div>

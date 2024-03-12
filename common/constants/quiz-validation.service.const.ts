@@ -1,0 +1,19 @@
+export const DIVIDER = 10;
+export const MIN_QUESTION_POINTS = 10;
+export const MAX_QUESTION_POINTS = 100;
+export const MAX_DURATION = 60;
+export const MIN_DURATION = 10;
+export const MIN_NUMBER_OF_CHOICES = 2;
+export const MAX_NUMBER_OF_CHOICES = 4;
+
+export const TITLE_REQUIRED = 'Le titre est requis';
+export const DESCRIPTION_REQUIRED = 'La description est requise';
+export const INVALID_DURATION = 'La durée doit être comprise entre 10 et 60 secondes';
+export const MINIMUM_NUMBER_OF_QUESTIONS_REQUIRED = 'Le quiz devrait contenir au moins une question';
+export const TEXT_REQUIRED = 'le texte est requis';
+export const QUESTION_POINTS_REQUIRED = "les points d'une question sont requis";
+export const INVALID_POINTS = 'les points doivent être entre 10 et 100';
+export const NON_DIVISIBLE_BY_TEN = 'les points de la question doivent être divisible par 10';
+export const INVALID_NUMBER_OF_CHOICES = 'doit avoir au moins deux choix et au plus quatre choix';
+export const INVALID_CHOICE = 'un choix doit être soit vrai soit faux';
+export const INVALID_QUESTION_CHOICES = 'on doit au moins avoir une bonne réponse et une mauvaise réponse';

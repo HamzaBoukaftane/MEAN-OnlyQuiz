@@ -1,0 +1,54 @@
+<app-unique-quiz-error-feedback 
+    *ngIf='!isQuizUnique' 
+    [quizName]="this.importedQuiz.title" 
+    (sendNewQuizName)="receiveQuizName($event)"
+    (cancelOperation)="killErrorFeedback($event)">
+</app-unique-quiz-error-feedback>
+<app-validation-quiz-error-feedback
+    *ngIf='isErrors'
+    [errors]='this.errors'
+    (cancelOperation)="killErrorFeedback($event)">
+</app-validation-quiz-error-feedback>
+<div class="quizzes-container" *ngIf='!isErrors && isQuizUnique'>
+    <table>
+        <thead>
+            <tr>
+                <th>Jeu</th>
+                <th *ngIf="isAdmin">Visibilité</th>
+                <th *ngIf="isAdmin">Dernière Modification</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let quiz of quizzes"  [class.selected]="!isAdmin && quiz === selectedQuiz" (click)="selectQuiz(quiz)">
+                <td  [class.hover] = "!isAdmin">
+                    <app-game-item [quiz]="quiz" class="game-item" [isAdmin]="isAdmin" (removeQuiz)="removeQuiz($event)"></app-game-item>
+                    <app-quiz-info *ngIf="quiz === selectedQuiz && !isAdmin" [selectedQuiz]="quiz"></app-quiz-info>
+                </td>
+                <td *ngIf="isAdmin">
+                    <label class="switch-btn" matTooltip="Afficher le questionnaire">
+                        <input type="checkbox" [(ngModel)]="quiz.visible" (click)="updateVisibility(quiz)" />
+                        <span class="slider round"></span>
+                    </label>
+                </td>
+                <td *ngIf="isAdmin">
+                    <span>{{ quiz.lastModification }}</span>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td class="button-container" *ngIf="isAdmin">
+                    <button routerLink="/quiz-creation" class="add"><i class="fas fa-plus"></i> Ajouter</button>
+                    <input type="file" class="file-selector" #fileInput accept="application/json" [class.hide-file-input]="true" (change)="selectFile($event)" />
+                    <button class="add upload" (click)="this.uploadFile()"><i class="fas fa-file-import"></i> Importer</button>
+                </td>
+                <td class="button-container" *ngIf="!isAdmin">
+                    <button (click)="playGame()" class="add" [class.disabled-button]="!selectedQuiz" [disabled]="!selectedQuiz">Jouer</button>
+                    <button (click)="testGame()" class="add" [class.disabled-button]="!selectedQuiz" [disabled]="!selectedQuiz">Tester</button>
+                    <button routerLink="/home" class="cancel">Annuler</button>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+

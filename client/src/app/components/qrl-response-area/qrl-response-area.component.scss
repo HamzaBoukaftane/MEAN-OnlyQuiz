@@ -1,0 +1,94 @@
+div {
+    max-width: 100%;
+    min-width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+label {
+    display: block;
+    //margin-bottom: 10px;
+}
+
+textarea {
+    width: 100%;
+    padding: 8px;
+    //margin-bottom: 10px;
+    resize: vertical;
+}
+
+small {
+    color: #888;
+}
+
+button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+button:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+}
+
+.enter {
+    margin-left: 10px;
+    background-color: #007bff;
+    color: white;
+    border: 4px solid #007bff;
+}
+
+.enter:hover {
+    background-color: white;
+    color: #007bff;
+    transition: 0.3s;
+}
+
+.enter:active {
+    background-color: #007bff;
+    color: black;
+    border: 4px solid black;
+}
+
+.enter:disabled {
+    background-color: gray;
+    color: white;
+    border: 4px solid gray;
+    cursor: not-allowed;
+    opacity: 0.35;
+}
+
+.cancel {
+    margin-right: 10px;
+    background-color: red;
+    color: white;
+    border: 4px solid red;
+}
+
+.cancel:hover {
+    background-color: white;
+    color: red;
+    transition: 0.3s;
+}
+
+.cancel:active {
+    background-color: red;
+    color: black;
+    border: 4px solid black;
+}
+
+button {
+    flex: 1;
+    margin: 5px;
+    border-radius: 20px;
+    padding: 5px 10px;
+    font-size: 20px;
+    cursor: pointer;
+}

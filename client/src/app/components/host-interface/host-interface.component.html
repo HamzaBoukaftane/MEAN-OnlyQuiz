@@ -1,0 +1,69 @@
+<div class="grid-container" *ngIf='hostInterfaceManagerService.isGameOver'>
+    <h2>Partie terminée</h2>
+    <app-leave-boutton></app-leave-boutton>
+</div>
+<div class="grid-container" *ngIf='!hostInterfaceManagerService.isGameOver'>
+    <div id="flex-container">
+        <div class="circle">
+            <span>{{hostInterfaceManagerService.timerText}}</span>
+            <span>{{gameService.timer}}</span>
+            <mat-icon [matTooltip]="hostInterfaceManagerService.isPaused ? 'Play' : 'Pause'" (click)='hostInterfaceManagerService.sendPauseTimer()'>{{ hostInterfaceManagerService.isPaused ? 'play_circle_outline' : 'pause_circle_outline' }}</mat-icon>
+            <mat-icon [matTooltip]="gameService.isPanicDisabled() || hostInterfaceManagerService.isPanicMode ? 'Vous ne pouvez  pas encore activer le mode panique' : 'Activez mode panique !'" (click)='hostInterfaceManagerService.startPanicMode()' [ngClass]="{'disable': gameService.isPanicDisabled() || hostInterfaceManagerService.isPanicMode}"> whatshot </mat-icon>
+        </div>
+        <section id="question-field">
+            <div>
+                <h2> Question {{gameService.questionNumber}}</h2>
+                <h3> Valeur: {{ gameService.question?.points }} points</h3>
+                <h4>{{ gameService.question?.text }}</h4>
+            </div>
+        </section>
+    </div>
+    <div class='btn-container'>
+        <button class='enter'
+                [disabled]='isDisabled() || hostInterfaceManagerService.timerText === timerMessage.RESULT_AVAILABLE_IN'
+                (click)='handleHostCommand()'>
+                {{updateHostCommand()}}
+        </button>
+        <app-leave-boutton></app-leave-boutton>
+    </div>
+</div>
+<app-correction-qrl *ngIf='!hostInterfaceManagerService.isGameOver' [gameStats] ='hostInterfaceManagerService.gameStats' [qrlAnswers]='hostInterfaceManagerService.responsesQRL' [isHostEvaluating]='hostInterfaceManagerService.isHostEvaluating'></app-correction-qrl>
+<div class="result-container">
+    <div class="histogram" *ngIf='!hostInterfaceManagerService.isGameOver'>
+        <app-statistic-histogram [changingResponses]="hostInterfaceManagerService.histogramDataChangingResponses" [valueOfResponses]="hostInterfaceManagerService.histogramDataValue"></app-statistic-histogram>
+    </div>
+    <app-statistic-zone *ngIf="hostInterfaceManagerService.isGameOver" [gameStats]="hostInterfaceManagerService.gameStats"></app-statistic-zone>
+    <div class="host-players-list">
+        <div class="custom-legend">
+            <h1> Légende de la liste des joueurs: </h1>
+            <span class="legend-item">
+
+                <span class="color-box" style="background-color: #f64343;"></span>
+                Inactif
+
+                <span class="color-box" style="background-color: #cea43b;"></span>
+                Interaction
+
+                <span class="color-box" style="background-color: #53b953;"></span>
+                Validation
+
+                <span class="color-box" style="background-color: #2d2d2d; "></span>
+                Quitter
+
+                <span class="color-box" style="background-color: white;"></span>
+                Fin de partie
+            </span>
+        </div>
+        <app-player-list
+            #playerListChild
+            [roomId]='gameService.gameRealService.roomId'
+            [leftPlayers]='hostInterfaceManagerService.leftPlayers'
+            [isHost] = 'true'>
+        </app-player-list>
+
+    </div>
+
+</div>
+
+
+

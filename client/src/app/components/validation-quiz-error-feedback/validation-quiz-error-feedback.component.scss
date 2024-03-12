@@ -1,0 +1,65 @@
+#error_container {
+  padding: 20px 75px;
+  margin-top: 50px;
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.centered-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center text horizontally */
+  justify-content: center; /* Center text vertically */
+  margin-bottom: 20px; /* Add space between h3 and text */
+}
+
+.left-align {
+  text-align: left;
+}
+
+.center-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.enter {
+  background-color: #007bff;
+  color: white;
+  border: 4px solid #007bff;
+  margin-left: 10px;
+}
+
+.enter:hover {
+  background-color: white;
+  color: #007bff;
+  transition: 0.3s;
+}
+
+.enter:active {
+  background-color: #007bff;
+  color: black;
+  border: 4px solid black;
+}
+
+button {
+  border-radius: 20px;
+  padding: 5px 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+h3 {
+  font-size: 22px;
+  color: #333;
+  margin: 25;
+}

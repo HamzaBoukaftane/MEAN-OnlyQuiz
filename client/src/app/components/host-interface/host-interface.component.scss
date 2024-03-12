@@ -1,0 +1,271 @@
+.grid-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.circle {
+    border-radius: 50%;
+    float: left;
+    position: absolute;
+    left: 0;
+
+    font-size: 45px;
+    width: 220px;
+    height: 80px;
+    padding: 50px 0px 70px 0px;
+    color: #FFF;
+    border: 2px solid #000000;
+    text-align: center;
+    font-family: Arial;
+    display: block;
+}
+
+.circle span:first-child {
+    color:black;
+    font-size: 14px;
+    display: block
+}
+
+.circle span:nth-child(2) {
+    color: #000000;
+    font-size: 60px;
+    display: block
+}
+
+.circle mat-icon {
+    font-size: 40px;
+    height: 40px ;
+    width: 40px;
+    cursor: pointer;
+    color: black;
+}
+
+.histogram {
+    align-items: center;
+}
+
+#panicButton {
+    width: 200px;
+    height: 100px;
+    align-items: center;
+    align-content: center;
+}
+
+#question-field{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0px;
+}
+
+#question-field > * {
+    justify-content: space-between;
+}
+
+#question-field > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#question-field > div > * {
+    margin: 1vh;
+}
+
+#question-field > div > h2 {
+    font-weight: 600;
+    font-size: 2.5vw;
+}
+
+#question-field > div > h3 {
+    font-weight: 400;
+    font-size: 1vw;
+}
+
+#question-field > h4 {
+    font-weight: 500;
+    font-size: 2vw;
+}
+
+#answer-field {
+    width: 90%;
+    height: 40%;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-around;
+    gap: 5%;
+    padding-bottom: 2% ;
+    margin-bottom: 5vh;
+}
+
+
+#flex-container {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    padding: 10px ;
+    position: relative;
+}
+
+.enter {
+    margin-left: 10px;
+    background-color: #007bff;
+    color: white;
+    border: 4px solid #007bff;
+}
+
+.enter:hover {
+    background-color: white;
+    color: #007bff;
+    transition: 0.3s;
+}
+
+.enter:active {
+    background-color: #007bff;
+    color: black;
+    border: 4px solid black;
+}
+
+.enter:disabled {
+    background-color: gray;
+    color: white;
+    border: 4px solid gray;
+    cursor: not-allowed;
+    opacity: 0.35;
+}
+
+.cancel {
+    margin-right: 10px;
+    background-color: red;
+    color: white;
+    border: 4px solid red;
+}
+
+.cancel:hover {
+    background-color: white;
+    color: red;
+    transition: 0.3s;
+}
+
+.cancel:active {
+    background-color: red;
+    color: black;
+    border: 4px solid black;
+}
+
+button {
+    flex: 1;
+    margin: 5px;
+    border-radius: 20px;
+    padding: 5px 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.strikethrough {
+    text-decoration: line-through;
+  }
+
+.players-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h2 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+
+        .player-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+
+            .player-name {
+                margin-right: 10px;
+                font-size: 18px;
+            }
+
+            .ban-icon {
+                font-size: 20px;
+                cursor: pointer;
+                visibility: visible;
+                margin-left: auto;
+            }
+        }
+    }
+    .icon-container {
+        font-size: 20px;
+        color: #FF0000;
+        cursor: pointer;
+    }
+}
+
+
+.result-container {
+    display: flex;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.histogram,
+app-organizer-histogram,
+app-statistic-zone,
+app-player-list {
+    flex: 1;
+}
+
+.histogram,
+app-organizer-histogram,
+app-statistic-zone {
+    flex: 1.25;
+}
+
+app-player-list {
+    flex: 1;
+}
+
+.disable:hover{
+    cursor: not-allowed;
+}
+.disable:active{
+    pointer-events: none;
+}
+mat-icon.disable {
+    filter:opacity(0.35);
+}
+
+.custom-legend {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: start;
+  }
+
+.color-box {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+    border: 2px solid black;
+  }
+
+.host-players-list{
+    display: flex;
+    flex-direction: column;
+}
+
+.legend-item > span{
+   margin-left: 15px;
+}

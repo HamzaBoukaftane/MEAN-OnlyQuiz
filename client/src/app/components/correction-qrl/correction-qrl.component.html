@@ -1,0 +1,32 @@
+<div *ngIf='isHostEvaluating'>
+    <div *ngIf="!qrlEvaluationService.isCorrectionFinished" class="correction-qrl-container">
+        <h3>Correction de la question:</h3>
+        <p> Joueur : {{ qrlEvaluationService.currentUsername }} </p>
+        <p> Réponse : {{ qrlEvaluationService.currentAnswer }} </p>
+        <select [(ngModel)]="qrlEvaluationService.inputPoint">
+            <option *ngFor="let score of qrlEvaluationService.scores" [value]="score">{{ score }}</option>
+        </select>
+        <button class="enter" (click)="submitPoint()">Valider</button>
+        <p *ngIf="!qrlEvaluationService.isValid">Veuillez sélectionner une note</p>
+    </div>
+    <div *ngIf="qrlEvaluationService.isCorrectionFinished">
+        <div class="players-container">
+            <h3>Notes des joueurs:</h3>
+            <table>
+                <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Note</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let score of qrlEvaluationService.points; let i = index">
+                    <td> {{qrlEvaluationService.usernames[i]}} </td>
+                    <td> {{score}} </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,12 @@
+<div class="admin-header">
+  <button routerLink="/home" class="cancel">Retour à l'acceuil</button>
+</div>
+<div class="justify-content">
+    <div class="center-content">
+      <h1>Panneau d'administration : gérer tous les jeux-questionnaires</h1>
+      <app-games-list [isAdmin]="true"></app-games-list>
+      <h1>Historique des parties</h1>
+      <app-history-list></app-history-list>
+    </div>
+    
+</div>

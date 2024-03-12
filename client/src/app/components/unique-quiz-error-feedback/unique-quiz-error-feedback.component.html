@@ -1,0 +1,13 @@
+<div class="center-content">
+    <div id="error_container">
+        <h3>Erreur lors de l'importation!</h3>
+        <p> Le nom {{quizName}} existe déjà. Veuillez changer le nom du quiz.</p>
+        <label for="name"> Saisir nouveau nom</label>
+        <input type="text" id="name" [(ngModel)]="newQuizName" [class]="inputBorderColor">
+        <p [class]="textColor"> {{error}} <p>
+        <div class="justify-content">
+            <button  class="cancel" (click)="returnToList()"> Annuler </button>
+            <button #enterButton routerLink='/game-admin-page' class="enter" (click)="emitQuizName()"> Changer </button>
+        </div>
+    </div>
+</div>

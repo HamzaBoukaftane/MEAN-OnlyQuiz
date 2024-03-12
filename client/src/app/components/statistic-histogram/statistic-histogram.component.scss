@@ -1,0 +1,41 @@
+:host {
+  width: 80%;
+}
+
+.chart-container {
+  display: flex;
+  flex-direction: column;
+  height: 50%;
+  margin-right: 25px;
+}
+
+.graph {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-legend {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.color-box {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+}
+
+

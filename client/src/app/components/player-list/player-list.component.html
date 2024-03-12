@@ -1,0 +1,31 @@
+<div *ngIf='isHost' class='sort-buttons'>
+    <button (click)="this.sort(sortType.SORT_BY_NAME)" [class]='(optionSelections.get(sortType.SORT_BY_NAME)) ? "selected": "add"' matTooltip="Trier par nom">Nom</button>
+    <button (click)="this.sort(sortType.SORT_BY_SCORE)" [class]='(optionSelections.get(sortType.SORT_BY_SCORE)) ? "selected": "add"' matTooltip="Trier par point">Point</button>
+    <button (click)="this.sort(sortType.SORT_BY_STATUS)" [class]='(optionSelections.get(sortType.SORT_BY_STATUS)) ? "selected": "add"' matTooltip="Trier par statut">Statut</button>
+    <button (click)="this.changeOrder()"  class='add' matTooltip="Changer l'ordre"><i [class]='orderIcon'></i></button>
+</div>
+<div class="players-container">
+    <table>
+        <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Points</th>
+            <th>Bonus</th>
+            <th *ngIf='isHost'>Chat</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let player of sortAllPlayers()" [class]='player[3]'>
+            <td> {{player[0]}} </td>
+            <td> {{player[1]}} </td>
+            <td> {{player[2]}} </td>
+            <td *ngIf='isHost'>
+                <label *ngIf='!interactiveListService.isPlayerGone(player[0], leftPlayers)' class="switch-btn">
+                    <input type="checkbox" [checked]='player[4]' (click)='toggleChatPermission(player[0])'  >
+                    <span class="slider round" [matTooltip]= "player[4] ? 'Desactiver le chat' : 'Activer le chat'"></span>
+                </label>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>

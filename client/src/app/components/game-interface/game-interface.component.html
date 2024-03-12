@@ -1,0 +1,40 @@
+<div class="grid-container" *ngIf='gameInterfaceManagementService.isGameOver'>
+    <h2>Le jeu est terminé!</h2>
+    <p>Votre score final : {{ score }}</p>
+    <app-leave-boutton></app-leave-boutton>
+</div>
+<div class="result-container">
+<app-statistic-zone *ngIf="gameInterfaceManagementService.isGameOver" [gameStats]="gameInterfaceManagementService.gameStats"></app-statistic-zone>
+    <app-player-list
+        [hidden]='!gameInterfaceManagementService.isGameOver'
+        #playerListChild
+        [roomId]='gameInterfaceManagementService.gameService.gameRealService.roomId'
+        [leftPlayers]='[]'
+        [isHost] = 'false'>
+    </app-player-list>
+</div>
+<div *ngIf='!gameInterfaceManagementService.isGameOver' class="grid-container">
+    <div id="flex-container">
+        <div class="circle">
+            <span>{{gameInterfaceManagementService.timerText}}</span>
+            <span>{{gameInterfaceManagementService.gameService.timer}}</span>
+        </div>
+        <section id="question-field">
+            <div>
+                <h2>Question {{ gameInterfaceManagementService.gameService.questionNumber }}</h2>
+                <h3>Valeur : {{ gameInterfaceManagementService.gameService.question?.points }} points</h3>
+            </div>
+        </section>
+        <div class='points'>
+            <p>Pointage: {{ score }}</p>
+            <p *ngIf = 'bonusStatus'> Vous avez recu des points Bonus! </p>
+        </div>
+    </div>
+    <h1>{{ gameInterfaceManagementService.gameService.question?.text }}</h1>
+    <br>
+    <app-game-answers-list *ngIf='gameInterfaceManagementService.gameService.question?.type === questionType.QCM' id='answer-field'>
+    </app-game-answers-list>
+    <app-qrl-response-area *ngIf='gameInterfaceManagementService.gameService.question?.type === questionType.QRL' id='answer-qrl-field'>
+    </app-qrl-response-area>
+</div>
+

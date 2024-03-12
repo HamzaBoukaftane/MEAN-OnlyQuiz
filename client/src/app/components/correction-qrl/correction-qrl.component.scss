@@ -1,0 +1,97 @@
+.correction-qrl-container {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .correction-qrl-container h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  .correction-qrl-container p {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+  }
+
+  .correction-qrl-container select {
+    padding: 8px;
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+
+
+  .correction-qrl-container p.error-message {
+    color: red;
+    font-size: 1rem;
+    margin-top: 10px;
+  }
+
+button {
+    margin: 5px;
+    border-radius: 20px;
+    padding: 5px 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.enter {
+    margin-left: 10px;
+    background-color: #007bff;
+    color: white;
+    border: 4px solid #007bff;
+}
+
+.enter:hover {
+    background-color: white;
+    color: #007bff;
+    transition: 0.3s;
+}
+
+.enter:active {
+    background-color: #007bff;
+    color: black;
+    border: 4px solid black;
+}
+
+.enter:disabled {
+    background-color: gray;
+    color: white;
+    border: 4px solid gray;
+    cursor: not-allowed;
+    opacity: 0.35;
+}
+
+.players-container table {
+    border-collapse: collapse;
+    width: 80%;
+    align-self: center;
+    background-color: white;
+    border: 2px solid black;
+}
+
+.players-container thead th {
+    background-color: #007bff;
+    color: white;
+    border: 2px solid black;
+    padding: 10px;
+}
+
+.players-container tbody td {
+    border: 2px solid black;
+    padding: 10px;
+    text-align: center;
+}
+
+.players-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+
